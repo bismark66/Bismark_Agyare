@@ -174,10 +174,10 @@ const featuredProjects = [
 
 const moreProjects = [
   {
-    title: "Complete Backend with Database",
+    title: "IVR Flow Builder Platform",
     description:
-      "Comprehensive API built with Node.js, Express, and MySQL featuring CRUD operations, database integration, and RESTful endpoints",
-    tech: ["Node.js", "Express.js", "MySQL"],
+      "Interactive Voice Response flow builder web application using React Flow, Redux, and Firebase. Features drag-and-drop interface for creating IVR systems with audio, menu, transfer call, and voice recording nodes",
+    tech: ["Next.js", "React Flow", "Redux", "Firebase", "Ant Design"],
     hasGithub: true,
   },
   {
