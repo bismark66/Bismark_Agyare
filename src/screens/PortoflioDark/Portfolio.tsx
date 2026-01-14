@@ -147,9 +147,19 @@ const featuredProjects: Project[] = [
     gradient: "from-violet-600 via-purple-500 to-indigo-600",
     hasGithub: true,
     githubUrl: "https://github.com/bismark66/agronomic-chatbot",
-    fullDescription: "Enterprise-scale agronomic platform at ESOKO delivering AI-powered chatbots that have sent over 1.2M+ messages to farmers. Built comprehensive dashboards for tracking sales, farmer engagement, and business intelligence with data-rich visualizations.",
-    features: ["AI-powered chatbot delivering agronomic advice", "Real-time farmer engagement analytics", "5 interactive dashboards for decision-making", "Reduced call center inquiries by 8k/month"],
-    highlights: ["1.2M+ AI messages delivered", "8k/month call reduction", "50% faster onboarding"],
+    fullDescription:
+      "Enterprise-scale agronomic platform at ESOKO delivering AI-powered chatbots that have sent over 1.2M+ messages to farmers. Built comprehensive dashboards for tracking sales, farmer engagement, and business intelligence with data-rich visualizations.",
+    features: [
+      "AI-powered chatbot delivering agronomic advice",
+      "Real-time farmer engagement analytics",
+      "5 interactive dashboards for decision-making",
+      "Reduced call center inquiries by 8k/month",
+    ],
+    highlights: [
+      "1.2M+ AI messages delivered",
+      "8k/month call reduction",
+      "50% faster onboarding",
+    ],
   },
   {
     title: "Competitor Pricing Scraper",
@@ -158,11 +168,23 @@ const featuredProjects: Project[] = [
     tech: ["Node.js", "Puppeteer", "Google Sheets API", "Cheerio"],
     gradient: "from-rose-500 via-red-500 to-orange-500",
     hasGithub: true,
-    fullDescription: "Professional-grade CLI tool for competitor price monitoring. Features dual extraction modes (table/card layouts), Puppeteer fallback for bot-protected sites, automatic Google Sheets export, and cron-based scheduling.",
-    features: ["Dual extraction modes (table & card layouts)", "Puppeteer fallback for Cloudflare protection", "Google Sheets auto-export with formatting", "Cron-based automated scheduling", "Winston logging with file rotation"],
-    highlights: ["2,400+ lines of code", "7+ competitor integrations", "Automated scheduling"],
+    githubUrl: "https://github.com/bismark66/competitive-pricing-scraper",
+    fullDescription:
+      "Professional-grade CLI tool for competitor price monitoring. Features dual extraction modes (table/card layouts), Puppeteer fallback for bot-protected sites, automatic Google Sheets export, and cron-based scheduling.",
+    features: [
+      "Dual extraction modes (table & card layouts)",
+      "Puppeteer fallback for Cloudflare protection",
+      "Google Sheets auto-export with formatting",
+      "Cron-based automated scheduling",
+      "Winston logging with file rotation",
+    ],
+    highlights: [
+      "2,400+ lines of code",
+      "7+ competitor integrations",
+      "Automated scheduling",
+    ],
   },
-  
+
   {
     title: "Truckly - Logistics Platform Backend",
     description:
@@ -171,9 +193,20 @@ const featuredProjects: Project[] = [
     gradient: "from-sky-500 via-blue-500 to-indigo-500",
     hasGithub: true,
     githubUrl: "https://github.com/bismark66/truckly-backend",
-    fullDescription: "Complete logistics platform backend connecting customers with drivers for cargo transportation. Features real-time driver tracking using Redis geospatial queries (GEOADD/GEOSEARCH), WebSocket-based chat, WebRTC audio calls, and multi-role authentication.",
-    features: ["Real-time driver tracking with Redis GEO", "WebSocket chat with Redis pub/sub", "WebRTC signaling for audio calls", "Multi-role RBAC (Customer, Driver, Fleet Owner)", "Paystack payment integration"],
-    highlights: ["Geospatial search", "Real-time tracking", "WebRTC audio calls"],
+    fullDescription:
+      "Complete logistics platform backend connecting customers with drivers for cargo transportation. Features real-time driver tracking using Redis geospatial queries (GEOADD/GEOSEARCH), WebSocket-based chat, WebRTC audio calls, and multi-role authentication.",
+    features: [
+      "Real-time driver tracking with Redis GEO",
+      "WebSocket chat with Redis pub/sub",
+      "WebRTC signaling for audio calls",
+      "Multi-role RBAC (Customer, Driver, Fleet Owner)",
+      "Paystack payment integration",
+    ],
+    highlights: [
+      "Geospatial search",
+      "Real-time tracking",
+      "WebRTC audio calls",
+    ],
   },
   {
     title: "VR-Integrated PWA Platform",
@@ -182,9 +215,19 @@ const featuredProjects: Project[] = [
     tech: ["React", "PWA", "RESTful APIs", "VR"],
     gradient: "from-emerald-500 via-teal-500 to-cyan-500",
     hasGithub: false,
-    fullDescription: "High-performance Progressive Web Applications integrated with VR environments at Relu Interactives. Improved RESTful APIs linking VR environments to real-time data with 99.9% uptime.",
-    features: ["PWA with offline capability", "VR environment integration", "RESTful API development", "99.9% uptime guarantee"],
-    highlights: ["30% boost in user engagement", "99.9% API uptime", "VR integration"],
+    fullDescription:
+      "High-performance Progressive Web Applications integrated with VR environments at Relu Interactives. Improved RESTful APIs linking VR environments to real-time data with 99.9% uptime.",
+    features: [
+      "PWA with offline capability",
+      "VR environment integration",
+      "RESTful API development",
+      "99.9% uptime guarantee",
+    ],
+    highlights: [
+      "30% boost in user engagement",
+      "99.9% API uptime",
+      "VR integration",
+    ],
   },
   {
     title: "Marketing Web Application",
@@ -193,9 +236,19 @@ const featuredProjects: Project[] = [
     tech: ["React.js", "Headless CMS", "SEO", "Performance"],
     gradient: "from-blue-500 via-indigo-500 to-violet-500",
     hasGithub: false,
-    fullDescription: "Complete modernization of a marketing web application using ReactJS and headless CMS integration. Implemented code-splitting, lazy loading, and real-time SEO metadata control.",
-    features: ["Headless CMS integration", "Code-splitting & lazy loading", "Real-time SEO metadata control", "User-friendly content workflows"],
-    highlights: ["35% faster page load", "15-20 hours saved monthly", "Instant publishing"],
+    fullDescription:
+      "Complete modernization of a marketing web application using ReactJS and headless CMS integration. Implemented code-splitting, lazy loading, and real-time SEO metadata control.",
+    features: [
+      "Headless CMS integration",
+      "Code-splitting & lazy loading",
+      "Real-time SEO metadata control",
+      "User-friendly content workflows",
+    ],
+    highlights: [
+      "35% faster page load",
+      "15-20 hours saved monthly",
+      "Instant publishing",
+    ],
   },
   {
     title: "Ride Hailing Management System",
@@ -204,11 +257,21 @@ const featuredProjects: Project[] = [
     tech: ["Next.js", "TypeScript", "OAuth2/JWT", "WebSocket"],
     gradient: "from-orange-500 via-pink-500 to-rose-500",
     hasGithub: false,
-    fullDescription: "Comprehensive admin dashboard and public-facing website for Dropin Ghana, a ride-hailing service. Implemented role-based access control, real-time ride tracking via WebSocket, and streamlined CI/CD with automated testing.",
-    features: ["Admin dashboard supporting 10k+ monthly users", "Role-Based Access Control with OAuth2/JWT", "Real-time ride updates via WebSocket", "Automated testing and build previews"],
-    highlights: ["10k+ monthly active users", "40+ unauthorized access incidents prevented", "Real-time tracking"],
+    fullDescription:
+      "Comprehensive admin dashboard and public-facing website for Dropin Ghana, a ride-hailing service. Implemented role-based access control, real-time ride tracking via WebSocket, and streamlined CI/CD with automated testing.",
+    features: [
+      "Admin dashboard supporting 10k+ monthly users",
+      "Role-Based Access Control with OAuth2/JWT",
+      "Real-time ride updates via WebSocket",
+      "Automated testing and build previews",
+    ],
+    highlights: [
+      "10k+ monthly active users",
+      "40+ unauthorized access incidents prevented",
+      "Real-time tracking",
+    ],
   },
-  
+
   {
     title: "Fault-Tolerant Notification System",
     description:
@@ -216,11 +279,20 @@ const featuredProjects: Project[] = [
     tech: ["Node.js", "Circuit Breaker", "NestJS", "Microservices"],
     gradient: "from-amber-500 via-yellow-500 to-orange-500",
     hasGithub: true,
-    fullDescription: "Microservices-based notification system with circuit breaker pattern for fault tolerance. Designed to handle high throughput with graceful degradation and automatic recovery.",
-    features: ["Circuit breaker pattern for fault tolerance", "Multi-channel notifications (Email, SMS, Push)", "Automatic retry with exponential backoff", "Health monitoring and alerting"],
-    highlights: ["99% delivery rate", "Fault-tolerant architecture", "Auto-recovery"],
+    fullDescription:
+      "Microservices-based notification system with circuit breaker pattern for fault tolerance. Designed to handle high throughput with graceful degradation and automatic recovery.",
+    features: [
+      "Circuit breaker pattern for fault tolerance",
+      "Multi-channel notifications (Email, SMS, Push)",
+      "Automatic retry with exponential backoff",
+      "Health monitoring and alerting",
+    ],
+    highlights: [
+      "99% delivery rate",
+      "Fault-tolerant architecture",
+      "Auto-recovery",
+    ],
   },
-  
 ];
 
 const moreProjects: Project[] = [
