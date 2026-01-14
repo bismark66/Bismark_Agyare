@@ -168,7 +168,7 @@ const featuredProjects: Project[] = [
     tech: ["Node.js", "Puppeteer", "Google Sheets API", "Cheerio"],
     gradient: "from-rose-500 via-red-500 to-orange-500",
     hasGithub: true,
-    githubUrl: "https://github.com/bismark66/competitive-pricing-scraper",
+    githubUrl: "https://github.com/bismark66/competitor-pricing-scraper",
     fullDescription:
       "Professional-grade CLI tool for competitor price monitoring. Features dual extraction modes (table/card layouts), Puppeteer fallback for bot-protected sites, automatic Google Sheets export, and cron-based scheduling.",
     features: [
