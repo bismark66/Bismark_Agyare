@@ -6,6 +6,7 @@ import {
   LinkedinIcon,
   MailIcon,
   FolderIcon,
+  XIcon,
 } from "lucide-react";
 
 // Twitter/X Icon component
@@ -123,22 +124,56 @@ const experienceDetails = [
   },
 ];
 
-const featuredProjects = [
+// Project type definition
+interface Project {
+  title: string;
+  description: string;
+  tech: string[];
+  gradient?: string;
+  hasGithub: boolean;
+  fullDescription?: string;
+  features?: string[];
+  highlights?: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+}
+
+const featuredProjects: Project[] = [
   {
     title: "AI-Powered Agronomic Platform",
     description:
       "Deployed AI chatbots delivering 1.2M+ messages and built comprehensive dashboards for farmer engagement analytics at ESOKO",
     tech: ["React", "AI/ML", "TypeScript", "Analytics"],
     gradient: "from-violet-600 via-purple-500 to-indigo-600",
-    hasGithub: false,
+    hasGithub: true,
+    githubUrl: "https://github.com/bismark66/agronomic-chatbot",
+    fullDescription: "Enterprise-scale agronomic platform at ESOKO delivering AI-powered chatbots that have sent over 1.2M+ messages to farmers. Built comprehensive dashboards for tracking sales, farmer engagement, and business intelligence with data-rich visualizations.",
+    features: ["AI-powered chatbot delivering agronomic advice", "Real-time farmer engagement analytics", "5 interactive dashboards for decision-making", "Reduced call center inquiries by 8k/month"],
+    highlights: ["1.2M+ AI messages delivered", "8k/month call reduction", "50% faster onboarding"],
   },
   {
-    title: "Ride Hailing Management System",
+    title: "Competitor Pricing Scraper",
     description:
-      "Led development of admin dashboard and public website for Dropin Ghana, supporting 10k+ monthly users with RBAC",
-    tech: ["Next.js", "TypeScript", "OAuth2/JWT", "WebSocket"],
-    gradient: "from-orange-500 via-pink-500 to-rose-500",
-    hasGithub: false,
+      "Production-grade Node.js CLI tool with dual extraction modes, Puppeteer fallback for bot-protected sites, Google Sheets auto-export, and cron-based scheduling for market intelligence",
+    tech: ["Node.js", "Puppeteer", "Google Sheets API", "Cheerio"],
+    gradient: "from-rose-500 via-red-500 to-orange-500",
+    hasGithub: true,
+    fullDescription: "Professional-grade CLI tool for competitor price monitoring. Features dual extraction modes (table/card layouts), Puppeteer fallback for bot-protected sites, automatic Google Sheets export, and cron-based scheduling.",
+    features: ["Dual extraction modes (table & card layouts)", "Puppeteer fallback for Cloudflare protection", "Google Sheets auto-export with formatting", "Cron-based automated scheduling", "Winston logging with file rotation"],
+    highlights: ["2,400+ lines of code", "7+ competitor integrations", "Automated scheduling"],
+  },
+  
+  {
+    title: "Truckly - Logistics Platform Backend",
+    description:
+      "Full-stack logistics backend with NestJS featuring real-time driver tracking via Redis geospatial queries, WebSocket chat, WebRTC audio calls, and JWT auth with multi-role RBAC",
+    tech: ["NestJS", "PostgreSQL", "Redis", "Socket.IO", "WebRTC"],
+    gradient: "from-sky-500 via-blue-500 to-indigo-500",
+    hasGithub: true,
+    githubUrl: "https://github.com/bismark66/truckly-backend",
+    fullDescription: "Complete logistics platform backend connecting customers with drivers for cargo transportation. Features real-time driver tracking using Redis geospatial queries (GEOADD/GEOSEARCH), WebSocket-based chat, WebRTC audio calls, and multi-role authentication.",
+    features: ["Real-time driver tracking with Redis GEO", "WebSocket chat with Redis pub/sub", "WebRTC signaling for audio calls", "Multi-role RBAC (Customer, Driver, Fleet Owner)", "Paystack payment integration"],
+    highlights: ["Geospatial search", "Real-time tracking", "WebRTC audio calls"],
   },
   {
     title: "VR-Integrated PWA Platform",
@@ -147,6 +182,9 @@ const featuredProjects = [
     tech: ["React", "PWA", "RESTful APIs", "VR"],
     gradient: "from-emerald-500 via-teal-500 to-cyan-500",
     hasGithub: false,
+    fullDescription: "High-performance Progressive Web Applications integrated with VR environments at Relu Interactives. Improved RESTful APIs linking VR environments to real-time data with 99.9% uptime.",
+    features: ["PWA with offline capability", "VR environment integration", "RESTful API development", "99.9% uptime guarantee"],
+    highlights: ["30% boost in user engagement", "99.9% API uptime", "VR integration"],
   },
   {
     title: "Marketing Web Application",
@@ -155,15 +193,22 @@ const featuredProjects = [
     tech: ["React.js", "Headless CMS", "SEO", "Performance"],
     gradient: "from-blue-500 via-indigo-500 to-violet-500",
     hasGithub: false,
+    fullDescription: "Complete modernization of a marketing web application using ReactJS and headless CMS integration. Implemented code-splitting, lazy loading, and real-time SEO metadata control.",
+    features: ["Headless CMS integration", "Code-splitting & lazy loading", "Real-time SEO metadata control", "User-friendly content workflows"],
+    highlights: ["35% faster page load", "15-20 hours saved monthly", "Instant publishing"],
   },
   {
-    title: "Semantic Search System",
+    title: "Ride Hailing Management System",
     description:
-      "Integrated advanced semantic search using Langchain and Superbase vector store with custom embeddings",
-    tech: ["Langchain", "Vector DB", "AI/ML", "Search"],
-    gradient: "from-rose-500 via-red-500 to-orange-500",
-    hasGithub: true,
+      "Led development of admin dashboard and public website for Dropin Ghana, supporting 10k+ monthly users with RBAC",
+    tech: ["Next.js", "TypeScript", "OAuth2/JWT", "WebSocket"],
+    gradient: "from-orange-500 via-pink-500 to-rose-500",
+    hasGithub: false,
+    fullDescription: "Comprehensive admin dashboard and public-facing website for Dropin Ghana, a ride-hailing service. Implemented role-based access control, real-time ride tracking via WebSocket, and streamlined CI/CD with automated testing.",
+    features: ["Admin dashboard supporting 10k+ monthly users", "Role-Based Access Control with OAuth2/JWT", "Real-time ride updates via WebSocket", "Automated testing and build previews"],
+    highlights: ["10k+ monthly active users", "40+ unauthorized access incidents prevented", "Real-time tracking"],
   },
+  
   {
     title: "Fault-Tolerant Notification System",
     description:
@@ -171,16 +216,24 @@ const featuredProjects = [
     tech: ["Node.js", "Circuit Breaker", "NestJS", "Microservices"],
     gradient: "from-amber-500 via-yellow-500 to-orange-500",
     hasGithub: true,
+    fullDescription: "Microservices-based notification system with circuit breaker pattern for fault tolerance. Designed to handle high throughput with graceful degradation and automatic recovery.",
+    features: ["Circuit breaker pattern for fault tolerance", "Multi-channel notifications (Email, SMS, Push)", "Automatic retry with exponential backoff", "Health monitoring and alerting"],
+    highlights: ["99% delivery rate", "Fault-tolerant architecture", "Auto-recovery"],
   },
+  
 ];
 
-const moreProjects = [
+const moreProjects: Project[] = [
   {
     title: "IVR Flow Builder Platform",
     description:
-      "Interactive Voice Response flow builder using React Flow, Redux, and Firebase with drag-and-drop interface",
-    tech: ["Next.js", "React Flow", "Redux", "Firebase"],
+      "AI-powered IVR platform with multi-provider LLM integration (Groq, OpenAI, Anthropic), 6-stage NLU pipeline for intent classification, entity extraction & sentiment analysis, and visual drag-and-drop flow builder for non-technical users",
+    tech: ["Next.js", "React Flow", "Redux", "Firebase", "Groq AI", "NLU"],
     hasGithub: true,
+    githubUrl: "https://github.com/bismark66/ivr-platform",
+    fullDescription: "AI-powered Interactive Voice Response platform featuring multi-provider LLM integration with automatic fallback for 99.9% uptime. Includes a 6-stage NLU pipeline (preprocessing, intent classification, entity extraction, sentiment analysis, context enrichment, confidence scoring) and a visual drag-and-drop flow builder.",
+    features: ["Multi-provider AI (Groq, OpenAI, Anthropic)", "6-stage NLU processing pipeline", "Visual drag-and-drop flow builder", "Real-time sentiment analysis", "Firebase Firestore persistence"],
+    highlights: ["70% AI cost reduction", "99.9% uptime", "No-code flow building"],
   },
   {
     title: "Digital Collaboration Tools",
@@ -188,20 +241,31 @@ const moreProjects = [
       "Conceptualized and rolled out digital tools for Smile At School NGO, reducing communication delays by 45%",
     tech: ["Digital Tools", "Communication", "NGO Tech"],
     hasGithub: false,
+    fullDescription: "Digital collaboration suite for Smile At School NGO enabling seamless communication across global teams. Coordinated Virtual Exchange Programs connecting 200+ students from 4 countries.",
+    features: ["Cross-country collaboration tools", "Virtual Exchange Program coordination", "Global team communication", "Digital resource standardization"],
+    highlights: ["45% faster communication", "200+ students connected", "4 countries"],
   },
   {
-    title: "React Calculator",
+    title: "AgroChem Inventory System",
     description:
-      "Interactive calculator demonstrating component-based architecture and modern React patterns",
-    tech: ["React", "JavaScript", "Components"],
+      "Full-stack inventory management for agrochemical shops with role-based auth (Admin/Shopkeeper), real-time stock tracking, sales reporting with custom date filtering, and responsive mobile-first design",
+    tech: ["Next.js 14", "TypeScript", "Tailwind CSS", "Radix UI"],
     hasGithub: true,
+    githubUrl: "https://github.com/bismark66/agrochem-inventory",
+    fullDescription: "Full-stack inventory management system for agrochemical shops built with Next.js 14 App Router. Features role-based authentication, real-time stock tracking with low-stock alerts, sales & credit tracking, and dynamic reporting with custom date ranges.",
+    features: ["Role-based access (Admin/Shopkeeper)", "Real-time stock tracking & alerts", "Sales reporting with date filtering", "Credit tracking system", "Mobile-first responsive design"],
+    highlights: ["Multi-role RBAC", "Custom date filtering", "In-app bug reporting"],
   },
   {
-    title: "Random Questions Platform",
+    title: "G-Client Learner - E-Learning Platform",
     description:
-      "Knowledge platform with frontend-backend integration, MySQL database, and dynamic question management",
-    tech: ["Full-Stack", "MySQL", "Knowledge Base"],
+      "Modern e-learning platform with React 19 and TypeScript featuring JWT authentication, course enrollment, learner dashboard, and invoice management",
+    tech: ["React 19", "TypeScript", "Mantine UI", "React Query", "Vite"],
     hasGithub: true,
+    githubUrl: "https://github.com/bismark66/g_client_admin",
+    fullDescription: "Comprehensive online learning management system for learners to discover and enroll in professional development tracks. Features secure JWT authentication with automatic token refresh, checkout and invoicing system, and personalized learner dashboard using React Query for server state and atomic design patterns.",
+    features: ["JWT auth with token refresh", "Course enrollment & checkout", "Invoice management system", "Learner dashboard with progress tracking", "Google OAuth integration ready"],
+    highlights: ["React 19 + TypeScript", "Mantine UI v8", "Atomic design architecture"],
   },
 ];
 
@@ -245,11 +309,143 @@ const skills = [
   "Content Management Systems",
   "Asana",
   "ClickUp",
+  "WebRTC",
+  "PWA",
+  "Google Cloud",
+  "System Design",
+  "RESTful APIs",
+  "Documentation",
+  "Testing & Debugging",
+  "Ant Design",
+  "LLM Integration",
+  "CRON jobs",
+  "Data normalization & validation",
+  "Logging & Observability",
+  "Design Patterns",
+  "NodeJs",
+  "Role-Based Access Control",
+  "Event-driven Architecture",
+  "API Integration", 
+  "SaaS"
 ];
+
+// Project Modal Component
+const ProjectModal = ({ project, onClose }: { project: Project | null; onClose: () => void }) => {
+  if (!project) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      {/* Backdrop */}
+      <div 
+        className="absolute inset-0 bg-black/80 backdrop-blur-sm" 
+        onClick={onClose}
+      />
+      
+      {/* Modal */}
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-[#0a0a1a] border border-white/10 shadow-2xl">
+        {/* Header with gradient */}
+        <div className={`h-32 bg-gradient-to-br ${project.gradient || 'from-purple-600 to-pink-600'} relative`}>
+          <button 
+            onClick={onClose}
+            className="absolute top-4 right-4 p-2 rounded-full bg-black/30 hover:bg-black/50 transition-colors"
+          >
+            <XIcon className="w-5 h-5 text-white" />
+          </button>
+          <div className="absolute -bottom-8 left-6">
+            <div className="w-16 h-16 rounded-2xl bg-[#0a0a1a] border border-white/20 flex items-center justify-center">
+              <FolderIcon className="w-8 h-8 text-purple-400" />
+            </div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 pt-12">
+          <h2 className="text-2xl font-bold text-white mb-2">{project.title}</h2>
+          
+          {/* Tech Stack */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tech.map((tech, i) => (
+              <span
+                key={i}
+                className="px-3 py-1 text-xs font-medium rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          {/* Full Description */}
+          <p className="text-white/70 leading-relaxed mb-6">
+            {project.fullDescription || project.description}
+          </p>
+
+          {/* Features */}
+          {project.features && project.features.length > 0 && (
+            <div className="mb-6">
+              <h3 className="text-sm font-semibold text-white/50 uppercase tracking-wider mb-3">Key Features</h3>
+              <ul className="space-y-2">
+                {project.features.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-2 text-white/70">
+                    <span className="text-purple-400 mt-1">▸</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Highlights */}
+          {project.highlights && project.highlights.length > 0 && (
+            <div className="mb-6">
+              <h3 className="text-sm font-semibold text-white/50 uppercase tracking-wider mb-3">Highlights</h3>
+              <div className="flex flex-wrap gap-2">
+                {project.highlights.map((highlight, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1.5 text-sm rounded-lg bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-white/10 text-white/80"
+                  >
+                    {highlight}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Actions */}
+          <div className="flex gap-3 pt-4 border-t border-white/10">
+            {project.hasGithub && project.githubUrl && (
+              <a 
+                href={project.githubUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white/70 hover:text-white"
+              >
+                <GithubIcon className="w-4 h-4" />
+                <span>View Code</span>
+              </a>
+            )}
+            {project.liveUrl && (
+              <a 
+                href={project.liveUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white/70 hover:text-white"
+              >
+                <ExternalLinkIcon className="w-4 h-4" />
+                <span>Live Demo</span>
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const Portfolio = (): JSX.Element => {
   const { theme } = useTheme();
   const [activeCompany, setActiveCompany] = React.useState(0);
+  const [selectedProject, setSelectedProject] = React.useState<Project | null>(null);
 
   return (
     <div className="bg-[#030014] min-h-screen text-white overflow-x-hidden">
@@ -535,12 +731,13 @@ export const Portfolio = (): JSX.Element => {
             {featuredProjects.map((project, index) => (
               <BlurFade key={index} delay={0.1 + index * 0.05}>
                 <MagicCard
-                  className="h-full overflow-hidden"
+                  className="h-full overflow-hidden cursor-pointer group"
                   gradientFrom="#8b5cf6"
                   gradientTo="#22d3d3"
+                  onClick={() => setSelectedProject(project)}
                 >
                   <div
-                    className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}
+                    className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden group-hover:scale-105 transition-transform duration-300`}
                   >
                     <div className="absolute inset-0 bg-black/20" />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -601,7 +798,11 @@ export const Portfolio = (): JSX.Element => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {moreProjects.map((project, index) => (
               <BlurFade key={index} delay={0.1 + index * 0.05}>
-                <MagicCard className="p-6 h-full" gradientColor="#1a1a2e">
+                <MagicCard 
+                  className="p-6 h-full cursor-pointer hover:border-purple-500/30 transition-colors" 
+                  gradientColor="#1a1a2e"
+                  onClick={() => setSelectedProject(project)}
+                >
                   <div className="flex items-start justify-between mb-4">
                     <div className="p-3 rounded-xl bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-white/10">
                       <FolderIcon className="w-5 h-5 text-purple-400" />
@@ -696,6 +897,14 @@ export const Portfolio = (): JSX.Element => {
           </div>
         </BlurFade>
       </section>
+
+      {/* Project Modal */}
+      {selectedProject && (
+        <ProjectModal 
+          project={selectedProject} 
+          onClose={() => setSelectedProject(null)} 
+        />
+      )}
     </div>
   );
 };
