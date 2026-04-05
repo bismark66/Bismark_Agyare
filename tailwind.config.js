@@ -75,6 +75,11 @@ module.exports = {
             "background-position": "100% 50%",
           },
         },
+        "gradient-text": {
+          "0%": { "background-position": "0% 50%" },
+          "50%": { "background-position": "100% 50%" },
+          "100%": { "background-position": "0% 50%" },
+        },
         "shimmer-slide": {
           to: {
             transform: "translate(calc(100cqw - 100%), 0)",
@@ -154,6 +159,7 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         gradient: "gradient 8s linear infinite",
+        "gradient-text": "gradient-text 4s ease infinite",
         "shimmer-slide": "shimmer-slide var(--speed) ease-in-out infinite alternate",
         "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
         "meteor-effect": "meteor-effect 5s linear infinite",
@@ -165,7 +171,15 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-glow": "radial-gradient(ellipse 50% 50% at 50% 0%, rgba(120, 119, 198, 0.3), transparent)",
+        "hero-glow": "radial-gradient(ellipse 50% 50% at 50% 0%, rgba(110, 231, 183, 0.12), transparent)",
+        "noise": "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
+      },
+      colors: {
+        "surface": "#0f0f0f",
+        "surface-2": "#141414",
+        "mint": "#6EE7B7",
+        "violet-soft": "#A78BFA",
+        "text-muted": "#6B7280",
       },
     },
     container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
