@@ -86,10 +86,10 @@ const experienceDetails = [
     type: "Remote",
     period: "Feb 2023 – Present",
     responsibilities: [
-      "Conceptualized and rolled out digital collaboration tools, reducing communication delays by 45% across global teams",
-      "Coordinated Virtual Exchange Program, enabling 200+ students from 4 countries in annual cross-cultural sessions",
-      "Standardized digital resources and platforms, cutting global team communication delays by 40%",
-      "Collaborate with a global team to align digital tools with organizational goals",
+      "Redesigned and built the Smile at School NGO website in Next.js — full multi-page site (home, about, programs, gallery, blog, volunteer, contact) with Contentful CMS integration for dynamic blog and programs content",
+      "Implemented Incremental Static Regeneration (ISR) with hourly revalidation, social sharing, and complete SEO metadata (Open Graph, Twitter cards, canonical URLs) to boost organic reach",
+      "Built animated UI components including scroll-triggered counters, testimonials carousel, and parallax scroll backgrounds to strengthen donor and volunteer engagement",
+      "Coordinated Virtual Exchange Program connecting 200+ students across 4 countries, and standardized digital collaboration tools across global teams",
     ],
   },
   {
@@ -98,10 +98,12 @@ const experienceDetails = [
     type: "Remote",
     period: "Feb 2021 – Present",
     responsibilities: [
-      "Integrated semantic search with Langchain, Supabase vector store and custom embeddings",
-      "Improved RESTful APIs linking VR environments to real-time data, ensuring 99.9% uptime",
-      "Developed high-performance PWAs with React, boosting user engagement by 30%",
-      "Proposed and led a fault-tolerant notification system using circuit breaker pattern",
+      "Built the Draco fuel station management REST API in NestJS — JWT-based auth with role-based access, TypeORM + PostgreSQL data layer, Redis caching, and 20+ resource modules covering stations, pumps, tanks, fuel inventory, replenishment, transactions, promotions, and company management",
+      "Contributed to the Relu notification service NestJS backend — a multi-provider SMS & email dispatch system supporting Arkesel, Hubtel, Hellio, and BigMsgBox, with webhook delivery, analytics, cron scheduling, and per-app API key management",
+      "Built the Draco transactors mobile app using Framework7 and React — covering fuel transaction recording, pump totalizer tracking, vehicle management, promotions, and onboarding flows",
+      "Contributed to the Relu Spatial browser-based 3D/AR editor (React Three Fiber, @react-three/xr) — scene inspection panel, module views, phone/web preview modes, and AWS S3 asset management",
+      "Contributed to the notification service admin dashboard with SMS & email activity monitoring, analytics/KPI charts, multi-app API key management, and CopilotKit AI assistant integration",
+      "Delivered responsive Next.js applications across multiple products with shared design systems, role-based route guards, and atomic component architecture",
     ],
   },
   {
