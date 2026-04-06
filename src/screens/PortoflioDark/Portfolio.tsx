@@ -75,7 +75,7 @@ const experienceDetails = [
     responsibilities: [
       "Built the DigiMakt internal admin dashboards in React covering agents, farmers, finance, warehouse, recruitment, training, and marketplace operations; developed agent-facing web forms including KYC document upload (Ghana Card, profile photo) and inventory assignment/return workflows",
       "Built the marketing landing page for ESOKO's Push messaging platform (SMS & Voice API) — including pricing, feature highlights, and multi-language SDK code examples; integrated CopilotKit AI popup assistant for on-site customer engagement, scoped to answer product queries and route unknowns to support",
-      "Built a NestJS backend integrating with Asterisk telephony for IVR voice campaigns, including a CDR analytics API and a cron-driven pipeline pushing call data to reporting every 20 seconds",
+      "Built the agronomic advisory AI chat frontend in React — featuring a session sidebar for multi-turn conversation management, image upload support, and real-time LLM responses; implemented with Mantine UI and TanStack Query for data fetching and state management",
       "Developed a RAG-based internal documentation tool that auto-indexes codebases on CI/CD events using tree-sitter (AST chunking), Ollama embeddings, and Pinecone vector search — reducing engineering onboarding time by 50%",
       "Developed the ESOKO marketplace React frontend covering full buyer, seller, and agent flows — product listings, cart & Paystack checkout, seller analytics dashboard, agent registration/inventory management, and order tracking",
     ],
