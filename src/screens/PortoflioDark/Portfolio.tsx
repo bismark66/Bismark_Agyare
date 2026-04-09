@@ -547,20 +547,6 @@ export const Portfolio = (): JSX.Element => {
                 </div>
 
                 {/* Floating badge */}
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.8, duration: 0.5 }}
-                  className="absolute -bottom-5 -left-6 flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#111111] border border-white/8 shadow-xl backdrop-blur-sm"
-                >
-                  <div className="w-8 h-8 rounded-lg bg-[#6EE7B7]/10 flex items-center justify-center">
-                    <span className="text-sm">🤖</span>
-                  </div>
-                  <div>
-                    <div className="text-xs font-semibold text-[#f5f5f5]">1.2M+ AI Messages</div>
-                    <div className="text-[10px] text-[#6b7280]">Delivered to farmers</div>
-                  </div>
-                </motion.div>
               </motion.div>
             </div>
           </div>
