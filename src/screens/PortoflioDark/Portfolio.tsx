@@ -145,6 +145,17 @@ interface Project {
   liveUrl?: string;
 }
 
+interface RelatedProduct {
+  name: string;
+  category: string;
+  accentColor: string;
+  shortSummary: string;
+  narrative: string;
+  capabilities: string[];
+  stack: string[];
+  links: { label: string; href: string; kind: "live" | "repo" | "docs" }[];
+}
+
 const featuredProjects: Project[] = [
   {
     title: "AI-Powered Agronomic Platform",
@@ -230,7 +241,7 @@ const moreProjects: Project[] = [
     tech: ["React 19", "TypeScript", "Mantine UI", "React Query", "Recharts"],
     accentColor: "#A78BFA",
     hasGithub: true,
-    githubUrl: "https://github.com/bismark66/g_client_admin",
+    githubUrl: "https://github.com/bismark66/g-client-learner",
     fullDescription: "Comprehensive online learning management system with secure JWT auth, course checkout, invoicing, personalized learner dashboard, and analytics built with Recharts. Uses TanStack React Query for server state and Mantine UI for the component system.",
     features: ["JWT auth with token refresh & password reset flow", "Course & track enrollment with checkout", "Invoice management system", "Learner dashboard with progress tracking", "Analytics charts with Recharts", "Google OAuth integration ready"],
     highlights: ["React 19 + TypeScript", "Mantine UI + Recharts", "Atomic design architecture"],
@@ -264,6 +275,68 @@ const moreProjects: Project[] = [
     fullDescription: "Microservices-based notification system with circuit breaker pattern for fault tolerance. Handles high throughput with graceful degradation and automatic recovery.",
     features: ["Circuit breaker pattern for fault tolerance", "Multi-channel notifications (Email, SMS, Push)", "Automatic retry with exponential backoff", "Health monitoring and alerting"],
     highlights: ["99% delivery rate", "Fault-tolerant architecture", "Auto-recovery"],
+  },
+];
+
+const relatedProducts: RelatedProduct[] = [
+  {
+    name: "G-Client Admin",
+    category: "Operations Console",
+    accentColor: "#6EE7B7",
+    shortSummary: "Admin dashboard for managing learners, tracks, courses, invoices, and reporting workflows.",
+    narrative:
+      "A management-focused console built for internal teams to monitor platform activity, process invoices, and manage content lifecycle from one place.",
+    capabilities: [
+      "Admin authentication and role-based access flows",
+      "Learner, track, and course management modules",
+      "Invoice and reporting views for operational oversight",
+      "Dashboard-first UI for day-to-day platform administration",
+    ],
+    stack: ["React", "TypeScript", "Vite", "Admin UI"],
+    links: [
+      { label: "Open Live Admin", href: "https://g-client-admin-hazel.vercel.app/", kind: "live" },
+      { label: "Open Local Sign In", href: "http://localhost:5173/signin", kind: "live" },
+      { label: "View Repository", href: "https://github.com/bismark66/g_client_admin", kind: "repo" },
+    ],
+  },
+  {
+    name: "G-Client Backend",
+    category: "API & Service Layer",
+    accentColor: "#60A5FA",
+    shortSummary: "Central backend powering authentication, learning data, and admin workflows for the client platforms.",
+    narrative:
+      "This service layer exposes the contracts consumed by both admin and learner clients, including authentication, course data, and transactional endpoints.",
+    capabilities: [
+      "Documented REST APIs for platform modules",
+      "Shared auth and business logic across client apps",
+      "Centralized data orchestration for courses and learners",
+      "Deployment-ready API docs for quicker integration",
+    ],
+    stack: ["Node.js", "TypeScript", "REST API", "Swagger"],
+    links: [
+      { label: "Open API Docs", href: "https://g-client-backend.onrender.com/api/docs", kind: "docs" },
+      { label: "View Repository", href: "https://github.com/bismark66/g_client_backend", kind: "repo" },
+    ],
+  },
+  {
+    name: "G-Client Learner",
+    category: "Learner Experience",
+    accentColor: "#A78BFA",
+    shortSummary: "Learner-facing platform for course discovery, enrollment, progress tracking, and learning engagement.",
+    narrative:
+      "A polished front-end experience focused on learner journeys from onboarding to course completion, with analytics and account-centered workflows.",
+    capabilities: [
+      "Course and track browsing with enrollment flows",
+      "Progress-oriented learner dashboard",
+      "Invoice and account-level learning history",
+      "Responsive experience for desktop and mobile",
+    ],
+    stack: ["React 19", "TypeScript", "Mantine UI", "React Query"],
+    links: [
+      { label: "Open Live Platform", href: "https://g-client-learner-odqc6bzhz-bismark66s-projects.vercel.app/", kind: "live" },
+      { label: "Open Local Platform", href: "http://localhost:5174/", kind: "live" },
+      { label: "View Repository", href: "https://github.com/bismark66/g-client-learner", kind: "repo" },
+    ],
   },
 ];
 
@@ -428,6 +501,7 @@ const ProjectModal = ({ project, onClose }: { project: Project | null; onClose: 
 export const Portfolio = (): JSX.Element => {
   const [activeCompany, setActiveCompany] = useState(0);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [activeRelatedProduct, setActiveRelatedProduct] = useState(0);
 
   return (
     <div className="relative min-h-screen text-[#f5f5f5] overflow-x-hidden" style={{ backgroundColor: "#080808" }}>
@@ -772,6 +846,154 @@ export const Portfolio = (): JSX.Element => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </Section>
+
+      {/* ── Related Products ─────────────────────────────────────────────── */}
+      <Section id="related-products">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeader label="Ecosystem" title="Related Products" />
+
+          <motion.p variants={fadeUp} className="text-sm md:text-base text-[#9ca3af] leading-relaxed mb-8 max-w-3xl">
+            One ecosystem, three products. Use the cards below to switch spotlight and explore each product's
+            role, technical stack, and live entry points.
+          </motion.p>
+
+          <motion.div variants={fadeUp} className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">
+            {relatedProducts.map((product, i) => {
+              const isActive = i === activeRelatedProduct;
+
+              return (
+                <button
+                  key={product.name}
+                  onClick={() => setActiveRelatedProduct(i)}
+                  className={`group relative text-left rounded-2xl border p-5 transition-all duration-300 overflow-hidden ${
+                    isActive
+                      ? "border-white/20 bg-[#141414]"
+                      : "border-white/8 bg-[#0f0f0f] hover:border-white/16 hover:bg-[#121212]"
+                  }`}
+                >
+                  <div
+                    className="absolute -top-16 -right-16 w-36 h-36 rounded-full blur-2xl opacity-30 pointer-events-none"
+                    style={{ backgroundColor: product.accentColor }}
+                  />
+
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-[11px] font-mono uppercase tracking-widest text-[#6b7280]">0{i + 1}</span>
+                      <span className="px-2 py-1 rounded-md text-[10px] font-mono uppercase tracking-widest border border-white/10 text-[#9ca3af]">
+                        {product.category}
+                      </span>
+                    </div>
+
+                    <h3 className="text-lg font-bold text-[#f5f5f5] mb-2.5">{product.name}</h3>
+                    <p className="text-xs text-[#9ca3af] leading-relaxed">{product.shortSummary}</p>
+
+                    <div className="mt-4 pt-3 border-t border-white/8 flex items-center justify-between">
+                      <span className="text-[11px] text-[#6b7280]">Open spotlight</span>
+                      <ArrowUpRightIcon
+                        className={`w-4 h-4 transition-transform duration-200 ${isActive ? "translate-x-0.5 -translate-y-0.5" : "group-hover:translate-x-0.5 group-hover:-translate-y-0.5"}`}
+                        style={{ color: product.accentColor }}
+                      />
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+          </motion.div>
+
+          <motion.div variants={fadeUp} className="rounded-2xl border border-white/8 bg-[#0f0f0f] overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeRelatedProduct}
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.26, ease: "easeInOut" }}
+              >
+                {(() => {
+                  const product = relatedProducts[activeRelatedProduct];
+
+                  return (
+                    <>
+                      <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${product.accentColor}, transparent)` }} />
+
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+                        <div className="lg:col-span-7 p-5 md:p-7 border-b lg:border-b-0 lg:border-r border-white/8">
+                          <p className="text-[11px] font-mono uppercase tracking-widest text-[#6b7280] mb-3">Product Spotlight</p>
+                          <h3 className="text-2xl md:text-3xl font-black text-[#f5f5f5] leading-tight mb-4">{product.name}</h3>
+                          <p className="text-sm md:text-base text-[#d1d5db] leading-relaxed mb-6">{product.narrative}</p>
+
+                          <h4 className="text-[11px] font-mono uppercase tracking-widest text-[#6b7280] mb-3">Core Capabilities</h4>
+                          <ul className="space-y-2.5">
+                            {product.capabilities.map((capability) => (
+                              <li key={capability} className="flex items-start gap-2.5 text-sm text-[#d1d5db] leading-relaxed">
+                                <ChevronRightIcon className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: product.accentColor }} />
+                                {capability}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="lg:col-span-5 p-5 md:p-7 bg-[#101010]">
+                          <div className="mb-6">
+                            <h4 className="text-[11px] font-mono uppercase tracking-widest text-[#6b7280] mb-3">Stack</h4>
+                            <div className="flex flex-wrap gap-2">
+                              {product.stack.map((stackItem) => (
+                                <span
+                                  key={stackItem}
+                                  className="px-2.5 py-1 text-xs rounded-md border"
+                                  style={{ borderColor: `${product.accentColor}55`, backgroundColor: `${product.accentColor}14`, color: "#d1d5db" }}
+                                >
+                                  {stackItem}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div className="mb-6">
+                            <h4 className="text-[11px] font-mono uppercase tracking-widest text-[#6b7280] mb-3">Environment Links</h4>
+                            <div className="flex flex-wrap gap-2">
+                              {product.links.map((link) => {
+                                const isRepo = link.kind === "repo";
+                                const styleClass = isRepo
+                                  ? "border-white/14 bg-white/5 hover:bg-white/10"
+                                  : "border-[#6EE7B7]/35 bg-[#6EE7B7]/12 hover:bg-[#6EE7B7]/18";
+
+                                return (
+                                  <a
+                                    key={link.href}
+                                    href={link.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs border text-[#d1d5db] transition-colors ${styleClass}`}
+                                  >
+                                    {isRepo ? <GithubIcon className="w-3.5 h-3.5" /> : <ExternalLinkIcon className="w-3.5 h-3.5" />}
+                                    {link.label}
+                                  </a>
+                                );
+                              })}
+                            </div>
+                          </div>
+
+                          <div className="rounded-xl border border-white/8 bg-[#0d0d0d] p-3.5">
+                            <p className="text-[11px] font-mono uppercase tracking-widest text-[#6b7280] mb-2">Ecosystem Flow</p>
+                            <div className="flex items-center gap-2 text-xs text-[#9ca3af]">
+                              <span className="px-2 py-1 rounded border border-white/10">Admin</span>
+                              <span className="text-[#6b7280]">→</span>
+                              <span className="px-2 py-1 rounded border border-white/10">API</span>
+                              <span className="text-[#6b7280]">→</span>
+                              <span className="px-2 py-1 rounded border border-white/10">Learner</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })()}
+              </motion.div>
+            </AnimatePresence>
+          </motion.div>
         </div>
       </Section>
 
