@@ -171,14 +171,18 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: "McKenzie Brown (LMI Holdings)",
+    company: "McKenzie Brown Engineering (LMI Holdings)",
     short: "McKenzie",
     title: "CNC & Maintenance Engineer",
     type: "National Service",
     period: "Oct 2024 – Oct 2025",
     responsibilities: [
-      "Supported the setup, operation and upkeep of CNC machining equipment in a production environment",
-      "Carried out preventive and corrective maintenance on production machinery, applying maintenance planning and spare-parts inventory practices to reduce downtime",
+      "Set up and ran CNC cutting and machining at McKenzie Brown Engineering, LMI Shamrock's structural-steel arm at the Dawa Industrial Zone, producing beams, columns, rafters, plates and connection parts from shop drawings in both standard profiles and custom specifications",
+      "Supported the DTRT textile factory build in Tema, a 59.4 m × 296 m steel structure of roughly 442 tonnes, through CNC machining, fabrication and finishing ahead of on-site erection",
+      "Worked across the full fabrication flow (detailing, cutting, welding, finishing, transport and on-site erection) on group projects in Dawa, Saglemi and Tema, including water-treatment service tanks, gatehouses and the Saglemi city sign",
+      "Supported production of insulated sandwich panels for roofing, cladding, cold rooms and factory buildings, alongside roofing sheets, purlins and pre-engineered building components",
+      "Checked cut and fabricated parts against shop drawings before welding and dispatch, feeding fit-up issues back to detailing",
+      "Carried out preventive and corrective maintenance on CNC and production machinery, scheduling servicing around production and keeping a spare-parts inventory to cut unplanned downtime",
     ],
   },
   {
